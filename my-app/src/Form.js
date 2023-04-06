@@ -33,8 +33,10 @@ const Form = () => {
             <input type="email" id="email"  name="email" placeholder='' required/>
         </div>  
         <div className="input-style-radio">
-            <p>Mengetahui Informasi Pendaftaran Sekolah Melalui</p>
-            <div>
+            <div className="flex1">
+                <p>Mengetahui Informasi Pendaftaran Sekolah Melalui</p>
+            </div>
+            <div className="flex2">
                 <div>
                     <label className="container" htmlFor="kerabat">Kerabat
                         <input type="radio" id="kerabat" name="lead_info" value="Kerabat" />
@@ -68,8 +70,10 @@ const Form = () => {
             </div>
         </div>
         <div className="input-style-radio">
-            <p>Pendaftaran Tingkat</p>
-            <div>
+            <div className="flex1">
+                <p>Pendaftaran Tingkat</p>
+            </div>
+            <div className="flex3">
                 <div>
                     <label className="container" htmlFor="toddler">Toddler - KB - TK - Alazhar 45
                         <input type="radio" id="toddler" name="school" value="Toddler - KB - TK - Alazhar 45" />
@@ -129,8 +133,13 @@ const Form = () => {
 export default Form;
 
 const FormStyle = styled.div`
+    padding-left: 100px; 
+    display: flex;
+    justify-content: center;
     .container{
-        padding:0;
+        margin: 0;
+        
+        width: 50vw;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -195,32 +204,39 @@ const FormStyle = styled.div`
             text-align: left;
             align-items: center;
             padding: 1em 0;
-            p {
+            .flex1 {
                 flex: 30%;
                 @media(max-width: 610px){
                     flex: 40%;
                 }
             }
             
-            div {
+            .flex3 {
                 flex: 70%;
-                display: block;
+            }
+            
+            .flex2 {
+                flex: 70%;
+                display: inline;
                 margin-left: 10px;
                 margin-bottom: 5px;
                 @media(max-width: 610px){
                     flex: 60%;
                 }
                 
+                div {
+                    margin-bottom: 10px;
+                }
+                
                 .container {
-                    display: block;
+                    display: inline;
                     position: relative;
                     padding-left: 35px;
-                    margin-bottom: 12px;
                     cursor: pointer;
                     -webkit-user-select: none;
                     -moz-user-select: none;
                     -ms-user-select: none;
-                    user-select: none;
+                    user-select: none;  
                 }
                 .container input {
                     position: absolute;
