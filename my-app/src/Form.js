@@ -30,30 +30,40 @@ const Form = () => {
             <label htmlFor='email'>
                 Alamat Email
             </label>
-            <input type="email" id="email"  name="email" placeholder='' />
+            <input type="email" id="email"  name="email" placeholder='' required/>
         </div>  
         <div className="input-style-radio">
-            <p>Mengetahui InhtmlFormasi Pendaftaran Sekolah Melalui</p>
+            <p>Mengetahui Informasi Pendaftaran Sekolah Melalui</p>
             <div>
                 <div>
-                    <input type="radio" id="kerabat" name="lead_info" value="Kerabat" />
-                    <label htmlFor="kerabat">Kerabat</label>
+                    <label className="container" htmlFor="kerabat">Kerabat
+                        <input type="radio" id="kerabat" name="lead_info" value="Kerabat" />
+                        <span className="checkmark"></span>
+                    </label>
                 </div>
                 <div>
-                    <input type="radio" id="instagram" name="lead_info" value="Instagram" />
-                    <label htmlFor="instagram">Instagram</label> 
+                    <label className="container" htmlFor="instagram">Instagram
+                        <input type="radio" id="instagram" name="lead_info" value="Instagram" />
+                        <span className="checkmark"></span>
+                    </label> 
                 </div>
                 <div>
-                    <input type="radio" id="website" name="lead_info" value="Website" />
-                    <label htmlFor="website">Website</label>
+                    <label className="container" htmlFor="website">Website
+                        <input type="radio" id="website" name="lead_info" value="Website" />
+                        <span className="checkmark"></span>
+                    </label>
                 </div>
                 <div>
-                    <input type="radio" id="sekolah_asal" name="lead_info" value="Sekolah Asal" />
-                    <label htmlFor="sekolah_asal">Sekolah Asal</label>
+                    <label className="container" htmlFor="sekolah_asal">Sekolah Asal
+                        <input type="radio" id="sekolah_asal" name="lead_info" value="Sekolah Asal" />
+                        <span className="checkmark"></span>
+                    </label>
                 </div>
                 <div>
-                    <input type="radio" id="other" name="lead_info" value="Other" />
-                    <label htmlFor="other">Other</label>
+                    <label className="container" htmlFor="other">Other
+                        <input type="radio" id="other" name="lead_info" value="Other" />
+                        <span className="checkmark"></span>
+                    </label>
                 </div>
             </div>
         </div>
@@ -61,46 +71,54 @@ const Form = () => {
             <p>Pendaftaran Tingkat</p>
             <div>
                 <div>
-                    <input type="radio" id="toddler" name="school" value="Toddler - KB - TK - Alazhar 45" />
-                    <label htmlFor="toddler">Toddler - KB - TK - Alazhar 45</label>
+                    <label className="container" htmlFor="toddler">Toddler - KB - TK - Alazhar 45
+                        <input type="radio" id="toddler" name="school" value="Toddler - KB - TK - Alazhar 45" />
+                        <span className="checkmark"></span>
+                    </label>
                 </div>
                 <div>
-                    <input type="radio" id="elementary" name="school" value="SD Islam Alazhar 46" />
-                    <label htmlFor="elementary">SD Islam Alazhar 46</label>
+                    <label className="container" htmlFor="elementary">SD Islam Alazhar 46
+                        <input type="radio" id="elementary" name="school" value="SD Islam Alazhar 46" />
+                        <span className="checkmark"></span>
+                    </label>
                 </div>
                 <div>
-                    <input type="radio" id="juniorhs" name="school" value="SMP Budi Cendekia Islamic School" />
-                    <label htmlFor="juniorhs">SMP Budi Cendekia Islamic School</label>
+                    <label className="container" htmlFor="juniorhs">SMP Budi Cendekia Islamic School
+                        <input type="radio" id="juniorhs" name="school" value="SMP Budi Cendekia Islamic School" />
+                        <span className="checkmark"></span>
+                    </label>
                 </div>
                 <div>
-                    <input type="radio" id="seniorhs" name="school" value="SMA Budi Cendekia Islamic School" />
-                    <label htmlFor="seniorhs">SMA Budi Cendekia Islamic School</label>
+                    <label className="container" htmlFor="seniorhs">SMA Budi Cendekia Islamic School
+                        <input type="radio" id="seniorhs" name="school" value="SMA Budi Cendekia Islamic School" />
+                        <span className="checkmark"></span>
+                    </label>
                 </div>
             </div>
         </div>
         <div className="input-style">
             <label htmlFor='name'>Nama Siswa</label>
-            <input type="text" name="name" placeholder='' />
+            <input type="text" name="name" placeholder='' required />
         </div>
         <div className="input-style">
             <label htmlFor='previous_school'>Sekolah Asal</label>
-            <input type="text" name="previous_school" placeholder='' />
+            <input type="text" name="previous_school" placeholder=''  required/>
         </div>
         <div className="input-style">
             <label htmlFor='address'>Alamat Tinggal</label>
-            <input type="text" name="address" placeholder='' />
+            <input type="text" name="address" placeholder='' required />
         </div>
         <div className="input-style">
             <label htmlFor='guardian'>Nama Ayah/Ibu/Wali</label>
-            <input type="text" name="guardian" placeholder='' />
+            <input type="text" name="guardian" placeholder='' required />
         </div>
         <div className="input-style">
             <label htmlFor='phone'>No. HP Ayah/Ibu/Wali</label>
-            <input type="tel" name="phone" placeholder='' pattern="[0-9]{8,12}"/>
+            <input type="tel" name="phone" placeholder='' pattern="[0-9]{8,12}" required/>
         </div>
-        <div className="input-style">
+        <div className="input-style-2">
 
-            <input type="submit" value={loading ? "Loading..." : "SEND MESSAGE"} />
+            <input type="submit" value={loading ? "Loading..." : "Submit Pendaftaran"} />
         </div> 
         </form>
         </div>
@@ -111,14 +129,8 @@ const Form = () => {
 export default Form;
 
 const FormStyle = styled.div`
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
     .container{
-        background-color: #F9CFF2;
-        margin-top: 10%;
-        padding: 10rem 10rem 10rem 10rem;
+        padding:0;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -132,6 +144,7 @@ const FormStyle = styled.div`
             flex-direction: row;
             align-items: center;
             text-align: left;
+            padding: 1em 0;
             gap: 0.8em;
 
             label{
@@ -148,16 +161,32 @@ const FormStyle = styled.div`
                 border: none;
                 padding: 0.8em;
                 border-radius: 2em;
+                margin-left: 20px;
+                box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.15);
                 @media(max-width: 610px){
                     flex: 50%;
                 }
             }
+        }
+        
+        .input-style-2{
+            padding-top: 0.8em;
+            display: flex;
+            justify-content: center;
+            flex-direction: row;
+            align-items: center;
+            text-align: left;
+            padding: 1em 0;
+            gap: 0.8em;
+            
             input[type=submit]{
-                background-color: #52154E;
+                width: 100px%;
+                background-color: #5295F1;
                 color: #FFFFFFFF;
-                font-weight: bold;
-
-
+                outline: none;
+                border: none;
+                border-radius: 2em;
+                padding: 0.8em;
             }
         }
         
@@ -165,6 +194,7 @@ const FormStyle = styled.div`
             display: flex;
             text-align: left;
             align-items: center;
+            padding: 1em 0;
             p {
                 flex: 30%;
                 @media(max-width: 610px){
@@ -175,9 +205,51 @@ const FormStyle = styled.div`
             div {
                 flex: 70%;
                 display: block;
+                margin-left: 10px;
+                margin-bottom: 5px;
                 @media(max-width: 610px){
                     flex: 60%;
                 }
+                
+                .container {
+                    display: block;
+                    position: relative;
+                    padding-left: 35px;
+                    margin-bottom: 12px;
+                    cursor: pointer;
+                    -webkit-user-select: none;
+                    -moz-user-select: none;
+                    -ms-user-select: none;
+                    user-select: none;
+                }
+                .container input {
+                    position: absolute;
+                    opacity: 0;
+                    cursor: pointer;
+                  }
+                  
+                  /* Create a custom radio button */
+                  .checkmark {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    height: 15px;
+                    width: 15px;
+                    background-color: white;
+                    border: 2px solid #5295F1;
+                    border-radius: 50%;
+                  }
+                  
+                  /* On mouse-over, add a grey background color */
+                  .container:hover input ~ .checkmark {
+                    background-color: #ccc;
+                  }
+                  
+                  /* When the radio button is checked, add a blue background */
+                  .container input:checked ~ .checkmark {
+                    background-color: #5295F1;
+                    box-shadow: 0px 3px 15px rgba(0,0,0,0.15);
+                  }
             }
         }
 
