@@ -27,14 +27,14 @@ const Form = () => {
         <div className="container">
         <form  ref={FormRef} onSubmit={handleSubmit} name="google-sheet" className="form-gsheet">
         <div className="input-style">
-            <label htmlFor='email'>
+            <label htmlFor='email' className="required">
                 Alamat Email
             </label>
             <input type="email" id="email"  name="email" placeholder='' required/>
         </div>  
         <div className="input-style-radio">
             <div className="flex1">
-                <p>Mengetahui Informasi Pendaftaran Sekolah Melalui</p>
+                <p className="required">Mengetahui Informasi Pendaftaran Sekolah Melalui</p>
             </div>
             <div className="flex2">
                 <div>
@@ -71,7 +71,7 @@ const Form = () => {
         </div>
         <div className="input-style-radio">
             <div className="flex1">
-                <p>Pendaftaran Tingkat</p>
+                <p className="required">Pendaftaran Tingkat</p>
             </div>
             <div className="flex2">
                 <div>
@@ -101,24 +101,27 @@ const Form = () => {
             </div>
         </div>
         <div className="input-style">
-            <label htmlFor='name'>Nama Siswa</label>
+            <label className="required" htmlFor='name'>Nama Siswa</label>
             <input type="text" name="name" placeholder='' required />
         </div>
         <div className="input-style">
             <label htmlFor='previous_school'>Sekolah Asal</label>
-            <input type="text" name="previous_school" placeholder=''  required/>
+            <input type="text" name="previous_school" placeholder=''/>
         </div>
         <div className="input-style">
-            <label htmlFor='address'>Alamat Tinggal</label>
+            <label className="required" htmlFor='address'>Alamat Tinggal</label>
             <input type="text" name="address" placeholder='' required />
         </div>
         <div className="input-style">
-            <label htmlFor='guardian'>Nama Ayah/Ibu/Wali</label>
+            <label className="required" htmlFor='guardian'>Nama Ayah/Ibu/Wali</label>
             <input type="text" name="guardian" placeholder='' required />
         </div>
         <div className="input-style">
-            <label htmlFor='phone'>No. HP Ayah/Ibu/Wali</label>
+            <label className="required" htmlFor='phone'>No. HP Ayah/Ibu/Wali</label>
             <input type="tel" name="phone" placeholder='' pattern="[0-9]{8,12}" required/>
+        </div>
+        <div>
+            <p className="p-required">*Required</p>
         </div>
         <div className="input-style-2">
 
@@ -145,7 +148,12 @@ const FormStyle = styled.div`
         }
         
         .form-gsheet {
-            width: 100%;
+            width: 90%;
+            
+            .p-required {
+                color: red;
+                text-align: left;
+            }
             
             .input-style{
                 padding-top: 0.8em;
@@ -159,9 +167,15 @@ const FormStyle = styled.div`
                 label{
                     font-family: 'Poppins', sans-serif;
                     flex: 30%;
+                    font-weight: 600;
                     @media(max-width: 610px){
                         flex: 50%;
                     }
+                }
+                
+                .required:after {
+                    content:" *";
+                    color: red;
                 }
     
                 input{
@@ -206,13 +220,15 @@ const FormStyle = styled.div`
                 padding: 1em 0;
                 .flex1 {
                     flex: 30%;
+                    font-weight: 600;
                     @media(max-width: 610px){
                         flex: 40%;
                     }
-                }
-                
-                .flex3 {
-                    flex: 70%;
+                    
+                    .required:after {
+                        content:" *";
+                        color: red;
+                    }
                 }
                 
                 .flex2 {
