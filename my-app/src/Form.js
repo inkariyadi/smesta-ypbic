@@ -5,6 +5,7 @@ const Form = () => {
     const FormRef = useRef(null)
     const scriptUrl = "https://script.google.com/macros/s/AKfycbytsB5osDVt3Vzc8QHd1_zaa0fGLr0gY1EBQdcLs3n6n2YmRzp4z_HTUh111uHBYMxJ7Q/exec"
     const [loading, setLoading] = useState(false)
+    const [ isAlertVisible, setIsAlertVisible ] = useState(false);
 
     const handleSubmit = (e) =>{
         e.preventDefault()
@@ -16,8 +17,15 @@ const Form = () => {
 
     }).then(res => {
             console.log("SUCCESSFULLY SUBMITTED")
-            setLoading(false)
-            console.log(new FormData(FormRef.current))
+            setLoading(false);
+            
+            setIsAlertVisible(true);
+
+            setTimeout(() => {
+                setIsAlertVisible(false);
+            }, 3000);
+            
+            FormRef.current.reset();
         })
         .catch(err => console.log(err))
     }
@@ -127,7 +135,9 @@ const Form = () => {
 
             <input type="submit" value={loading ? "Loading..." : "Submit Pendaftaran"} />
         </div> 
+        { isAlertVisible && <p className="alert">Form succesfully submitted. Thank you!</p>}
         </form>
+       
         </div>
     </FormStyle>  
   )
@@ -153,6 +163,10 @@ const FormStyle = styled.div`
             .p-required {
                 color: red;
                 text-align: left;
+            }
+            
+            .alert {
+                color: green;
             }
             
             .input-style{
