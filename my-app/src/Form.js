@@ -25,7 +25,7 @@ const Form = () => {
   return (
     <FormStyle>
         <div className="container">
-        <form  ref={FormRef} onSubmit={handleSubmit} name="google-sheet">
+        <form  ref={FormRef} onSubmit={handleSubmit} name="google-sheet" className="form-gsheet">
         <div className="input-style">
             <label htmlFor='email'>
                 Alamat Email
@@ -73,7 +73,7 @@ const Form = () => {
             <div className="flex1">
                 <p>Pendaftaran Tingkat</p>
             </div>
-            <div className="flex3">
+            <div className="flex2">
                 <div>
                     <label className="container" htmlFor="toddler">Toddler - KB - TK - Alazhar 45
                         <input type="radio" id="toddler" name="school" value="Toddler - KB - TK - Alazhar 45" />
@@ -133,141 +133,145 @@ const Form = () => {
 export default Form;
 
 const FormStyle = styled.div`
-    padding-left: 100px; 
-    display: flex;
-    justify-content: center;
     .container{
         margin: 0;
         
-        width: 50vw;
+        width: 100vw;
         display: flex;
         justify-content: center;
         align-items: center;
         @media(max-width: 610px){
             padding: 4rem 4rem 4rem 4rem;
         }
-
-        .input-style{
-            padding-top: 0.8em;
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-            text-align: left;
-            padding: 1em 0;
-            gap: 0.8em;
-
-            label{
-                font-family: 'Poppins', sans-serif;
-                flex: 30%;
-                @media(max-width: 610px){
-                    flex: 50%;
-                }
-            }
-
-            input{
-                flex: 70%;
-                outline: none;
-                border: none;
-                padding: 0.8em;
-                border-radius: 2em;
-                margin-left: 20px;
-                box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.15);
-                @media(max-width: 610px){
-                    flex: 50%;
-                }
-            }
-        }
         
-        .input-style-2{
-            padding-top: 0.8em;
-            display: flex;
-            justify-content: center;
-            flex-direction: row;
-            align-items: center;
-            text-align: left;
-            padding: 1em 0;
-            gap: 0.8em;
+        .form-gsheet {
+            width: 100%;
             
-            input[type=submit]{
-                width: 100px%;
-                background-color: #5295F1;
-                color: #FFFFFFFF;
-                outline: none;
-                border: none;
-                border-radius: 2em;
-                padding: 0.8em;
-            }
-        }
-        
-        .input-style-radio{
-            display: flex;
-            text-align: left;
-            align-items: center;
-            padding: 1em 0;
-            .flex1 {
-                flex: 30%;
-                @media(max-width: 610px){
-                    flex: 40%;
+            .input-style{
+                padding-top: 0.8em;
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                text-align: left;
+                padding: 1em 0;
+                gap: 0.8em;
+    
+                label{
+                    font-family: 'Poppins', sans-serif;
+                    flex: 30%;
+                    @media(max-width: 610px){
+                        flex: 50%;
+                    }
+                }
+    
+                input{
+                    flex: 70%;
+                    outline: none;
+                    border: none;
+                    padding: 0.8em;
+                    border-radius: 2em;
+                    margin-left: 20px;
+                    box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.15);
+                    @media(max-width: 610px){
+                        flex: 50%;
+                    }
                 }
             }
             
-            .flex3 {
-                flex: 70%;
-            }
-            
-            .flex2 {
-                flex: 70%;
-                display: inline;
-                margin-left: 10px;
-                margin-bottom: 5px;
-                @media(max-width: 610px){
-                    flex: 60%;
-                }
+            .input-style-2{
+                padding-top: 0.8em;
+                display: flex;
+                justify-content: center;
+                flex-direction: row;
+                align-items: center;
+                text-align: left;
+                padding: 1em 0;
+                gap: 0.8em;
                 
-                div {
-                    margin-bottom: 10px;
-                }
-                
-                .container {
-                    display: inline;
-                    position: relative;
-                    padding-left: 35px;
-                    cursor: pointer;
-                    -webkit-user-select: none;
-                    -moz-user-select: none;
-                    -ms-user-select: none;
-                    user-select: none;  
-                }
-                .container input {
-                    position: absolute;
-                    opacity: 0;
-                    cursor: pointer;
-                  }
-                  
-                  /* Create a custom radio button */
-                  .checkmark {
-                    position: absolute;
-                    top: 0;
-                    left: 0;
-                    height: 15px;
-                    width: 15px;
-                    background-color: white;
-                    border: 2px solid #5295F1;
-                    border-radius: 50%;
-                  }
-                  
-                  /* On mouse-over, add a grey background color */
-                  .container:hover input ~ .checkmark {
-                    background-color: #ccc;
-                  }
-                  
-                  /* When the radio button is checked, add a blue background */
-                  .container input:checked ~ .checkmark {
+                input[type=submit]{
+                    width: 100px%;
                     background-color: #5295F1;
-                    box-shadow: 0px 3px 15px rgba(0,0,0,0.15);
-                  }
+                    color: #FFFFFFFF;
+                    outline: none;
+                    border: none;
+                    border-radius: 2em;
+                    padding: 0.8em;
+                }
+            }
+            
+            .input-style-radio{
+                display: flex;
+                text-align: left;
+                align-items: center;
+                padding: 1em 0;
+                .flex1 {
+                    flex: 30%;
+                    @media(max-width: 610px){
+                        flex: 40%;
+                    }
+                }
+                
+                .flex3 {
+                    flex: 70%;
+                }
+                
+                .flex2 {
+                    flex: 70%;
+                    display: inline;
+                    margin-left: 10px;
+                    margin-bottom: 5px;
+                    @media(max-width: 610px){
+                        flex: 60%;
+                    }
+                    
+                    div {
+                        margin-bottom: 10px;
+                    }
+                    
+                    .container {
+                        display: inline;
+                        position: relative;
+                        padding-left: 35px;
+                        cursor: pointer;
+                        -webkit-user-select: none;
+                        -moz-user-select: none;
+                        -ms-user-select: none;
+                        user-select: none;  
+                    }
+                    .container input {
+                        position: absolute;
+                        opacity: 0;
+                        cursor: pointer;
+                      }
+                      
+                      /* Create a custom radio button */
+                      .checkmark {
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        height: 15px;
+                        width: 15px;
+                        background-color: white;
+                        border: 2px solid #5295F1;
+                        border-radius: 50%;
+                      }
+                      
+                      /* On mouse-over, add a grey background color */
+                      .container:hover input ~ .checkmark {
+                        background-color: #ccc;
+                      }
+                      
+                      /* When the radio button is checked, add a blue background */
+                      .container input:checked ~ .checkmark {
+                        background-color: #5295F1;
+                        box-shadow: 0px 3px 15px rgba(0,0,0,0.15);
+                      }
+                }
             }
         }
+        
+
+        
 
     }
 `
