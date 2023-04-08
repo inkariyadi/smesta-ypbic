@@ -168,9 +168,6 @@ const FormStyle = styled.div`
                     font-family: 'Poppins', sans-serif;
                     flex: 30%;
                     font-weight: 600;
-                    @media(max-width: 610px){
-                        flex: 50%;
-                    }
                 }
                 
                 .required:after {
@@ -186,9 +183,6 @@ const FormStyle = styled.div`
                     border-radius: 2em;
                     margin-left: 20px;
                     box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.15);
-                    @media(max-width: 610px){
-                        flex: 50%;
-                    }
                 }
             }
             
@@ -218,11 +212,15 @@ const FormStyle = styled.div`
                 text-align: left;
                 align-items: center;
                 padding: 1em 0;
+                @media(max-width: 610px){
+                    display: inline;
+                }
+                
                 .flex1 {
                     flex: 30%;
                     font-weight: 600;
                     @media(max-width: 610px){
-                        flex: 40%;
+                        
                     }
                     
                     .required:after {
@@ -237,7 +235,7 @@ const FormStyle = styled.div`
                     margin-left: 10px;
                     margin-bottom: 5px;
                     @media(max-width: 610px){
-                        flex: 60%;
+                        
                     }
                     
                     div {
@@ -270,6 +268,9 @@ const FormStyle = styled.div`
                         background-color: white;
                         border: 2px solid #5295F1;
                         border-radius: 50%;
+                        @media(max-width: 610px){
+                            top: 65px;
+                        }
                       }
                       
                       /* On mouse-over, add a grey background color */
