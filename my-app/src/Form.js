@@ -154,7 +154,7 @@ const FormStyle = styled.div`
         justify-content: center;
         align-items: center;
         @media(max-width: 610px){
-            padding: 4rem 4rem 4rem 4rem;
+            padding: 1rem;
         }
         
         .form-gsheet {
@@ -283,7 +283,7 @@ const FormStyle = styled.div`
                         border: 2px solid #5295F1;
                         border-radius: 50%;
                         @media(max-width: 610px){
-                            top: 65px;
+                            top: 17px;
                         }
                       }
                       
